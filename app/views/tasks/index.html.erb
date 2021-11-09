@@ -3,4 +3,7 @@
 <% @tasks.each do |task| %>
   <h3><%= link_to task.title, task_path(task)  %></h3>
   <p><%= task.completed %></p>
+  <%= link_to 'Delete', task_path(task), method: :delete, data: { confirm: 'Do you really want to?' } %>
+  <%= link_to 'Edit', edit_path(task) %>
+  <%= link_to 'Add', tasks_new_path(task) %>
 <% end %>
